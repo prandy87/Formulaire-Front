@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Signup = ({ setUser, setUserData }) => {
@@ -9,20 +10,33 @@ const Signup = ({ setUser, setUserData }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const navigate = useNavigate();
   const onSubmit = async (data) => {
     console.log(data);
 
     try {
-      const response = await axios.post("http://localhost:3001/signup", data);
+      const response = await axios.post(
+        "http://formulaire-backend-ressources.herokuapp.com/signup",
+        data
+      );
       console.log(response.data);
-      setUser(response.data.token);
-      setUserData(response.data.account);
+      setUser(
+        response.data.token,
+        response.data.account.firstName,
+        response.data.account.lastName,
+        response.data.account.address,
+        response.data.account.zipcode,
+        response.data.account.city,
+        response.data.account.comment
+      );
     } catch (error) {
       console.log(error.message);
       if (error.message.includes("400")) {
         alert(`Votre email est déjà enregistré`);
       }
     }
+    navigate("/mainpage");
   };
 
   return (

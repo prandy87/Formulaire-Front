@@ -13,10 +13,13 @@ const Signin = ({ setUser }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const response = await axios.post("http://localhost:3001/signin", {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        "http://formulaire-backend-ressources.herokuapp.com/signin",
+        {
+          email: email,
+          password: password,
+        }
+      );
       if (response.data) {
         console.log(response.data);
         setUser(
@@ -24,7 +27,9 @@ const Signin = ({ setUser }) => {
           response.data.account.firstName,
           response.data.account.lastName,
           response.data.account.address,
-          response.data.account.zipcode
+          response.data.account.zipcode,
+          response.data.account.city,
+          response.data.account.comment
         );
 
         navigate("/mainpage");

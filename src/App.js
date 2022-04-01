@@ -14,14 +14,34 @@ function App() {
   const [lastName, setLastName] = useState(Cookies.get("lastName") || null);
   const [address, setAddress] = useState(Cookies.get("address") || null);
   const [zipcode, setZipcode] = useState(Cookies.get("zipcode") || null);
+  const [city, setCity] = useState(Cookies.get("city") || null);
+  const [comment, setComment] = useState(Cookies.get("comment") || null);
 
-  const setUser = (token, firstName, lastName, address, zipcode) => {
-    if (token || firstName || lastName || address || zipcode) {
+  const setUser = (
+    token,
+    firstName,
+    lastName,
+    address,
+    zipcode,
+    city,
+    comment
+  ) => {
+    if (
+      token ||
+      firstName ||
+      lastName ||
+      address ||
+      zipcode ||
+      city ||
+      comment
+    ) {
       Cookies.set("userToken", token);
       Cookies.set("firstName", firstName);
       Cookies.set("lastName", lastName);
       Cookies.set("address", address);
       Cookies.set("zipcode", zipcode);
+      Cookies.set("city", city);
+      Cookies.set("comment", comment);
     } else {
       Cookies.remove("userToken");
     }
@@ -30,6 +50,8 @@ function App() {
     setLastName(lastName);
     setAddress(address);
     setZipcode(zipcode);
+    setCity(city);
+    setComment(comment);
   };
 
   return (
@@ -46,6 +68,8 @@ function App() {
               lastName={lastName}
               address={address}
               zipcode={zipcode}
+              city={city}
+              comment={comment}
             />
           }
         />

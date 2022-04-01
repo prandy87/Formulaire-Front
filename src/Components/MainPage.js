@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const MainPage = ({ firstName, lastName, address, zipcode }) => {
+const MainPage = ({ firstName, lastName, address, zipcode, city, comment }) => {
   return (
     <>
       <div>
@@ -13,11 +13,11 @@ const MainPage = ({ firstName, lastName, address, zipcode }) => {
           <h3>Adresse :</h3>
           <p>{address}</p>
           <p>{zipcode}</p>
+          <p>{city}</p>
         </div>
         <div className="card">
-          <h3>Adresse :</h3>
-          <p>{address}</p>
-          <p>{zipcode}</p>
+          <h4>Votre Commentaire :</h4>
+          <p>{comment}</p>
         </div>
       </div>
     </>
