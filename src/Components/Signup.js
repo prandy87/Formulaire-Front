@@ -17,7 +17,7 @@ const Signup = ({ setUser, setUserData }) => {
 
     try {
       const response = await axios.post(
-        "http://formulaire-backend-ressources.herokuapp.com/signup",
+        "https://formulaire-backend-ressources.herokuapp.com/signup",
         data
       );
       console.log(response.data);
