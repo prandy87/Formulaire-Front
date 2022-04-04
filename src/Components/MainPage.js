@@ -114,20 +114,20 @@ const MainPage = ({
       <div className="info">
         <div className="card">
           <h3>Adresse :</h3>
-          <p>{address}</p>
-          <p>{zipcode}</p>
-          <p>{city}</p>
+          {address && <p>{address}</p>}
+          {zipcode && <p>{zipcode}</p>}
+          {city && <p>{city}</p>}
         </div>
         <div className="card">
           <h3>Votre Commentaire:</h3>
-          <p>{comment}</p>
+          {comment && <p>{comment}</p>}
         </div>
         <h2>Modifier les informations : </h2>
         <div className="form3">
           <form>
             <input
               type="text"
-              placeholder="Modifier mon adresse"
+              placeholder="Ajouter/Modifier mon adresse"
               onChange={(e) => setNewAddress(e.target.value)}
             />
             <button onClick={handleSubmit1}>Valider</button>
@@ -135,7 +135,7 @@ const MainPage = ({
           <form>
             <input
               type="text"
-              placeholder="Modifier mon code postal"
+              placeholder="Ajouter/Modifier mon code postal"
               onChange={(e) => setNewZipCode(e.target.value)}
             />
             <button onClick={handleSubmit2}>Valider</button>
@@ -143,7 +143,7 @@ const MainPage = ({
           <form>
             <input
               type="text"
-              placeholder="Modifier ma ville"
+              placeholder="Ajouter/Modifier ma ville"
               onChange={(e) => setNewCity(e.target.value)}
             />
             <button onClick={handleSubmit3}>Valider</button>
@@ -152,7 +152,7 @@ const MainPage = ({
             <textarea
               maxLength="255"
               type="text"
-              placeholder="Modifier mon commentaire"
+              placeholder="Ajouter/Modifier mon commentaire"
               onChange={(e) => setNewComment(e.target.value)}
             />
             <button onClick={handleSubmit4}>Valider</button>
