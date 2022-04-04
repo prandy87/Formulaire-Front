@@ -16,6 +16,7 @@ function App() {
   const [zipcode, setZipcode] = useState(Cookies.get("zipcode") || null);
   const [city, setCity] = useState(Cookies.get("city") || null);
   const [comment, setComment] = useState(Cookies.get("comment") || null);
+  const [_id, set_Id] = useState(Cookies.get("_id") || null);
 
   const setUser = (
     token,
@@ -24,7 +25,8 @@ function App() {
     address,
     zipcode,
     city,
-    comment
+    comment,
+    _id
   ) => {
     if (
       token ||
@@ -33,7 +35,8 @@ function App() {
       address ||
       zipcode ||
       city ||
-      comment
+      comment ||
+      _id
     ) {
       Cookies.set("userToken", token);
       Cookies.set("firstName", firstName);
@@ -42,9 +45,11 @@ function App() {
       Cookies.set("zipcode", zipcode);
       Cookies.set("city", city);
       Cookies.set("comment", comment);
+      Cookies.set("_id", _id);
     } else {
       Cookies.remove("userToken");
     }
+
     setToken(token);
     setFirstName(firstName);
     setLastName(lastName);
@@ -52,6 +57,7 @@ function App() {
     setZipcode(zipcode);
     setCity(city);
     setComment(comment);
+    set_Id(_id);
   };
 
   return (
@@ -70,6 +76,8 @@ function App() {
               zipcode={zipcode}
               city={city}
               comment={comment}
+              setUser={setUser}
+              _id={_id}
             />
           }
         />

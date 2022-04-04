@@ -89,7 +89,8 @@ h2 {
 .info {
   background-color: lightgray;
   width: 80%;
-  height: 800px;
+  min-height: 800px;
+  height: auto;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
@@ -102,9 +103,31 @@ h2 {
 }
 .card {
   background-color: antiquewhite;
-  height: 80px;
+  max-height: auto;
   width: 120px;
   padding: 40px;
   font-size: large;
   margin: 10px;
 }
+.card p {
+  margin-top: 10%;
+  max-width: 120px;
+  overflow-y: scroll;
+}
+.card h3 {
+  font-size: large;
+}
+.form3 input {
+  margin-top: 15%;
+  height: 30px;
+  width: 170px;
+}
+
+.form3 textarea {
+  width: 200px;
+  height: 50px;
+  margin-top: 15%;
+}
+/* .form3 button {
+  margin-left: 10%;
+} */
