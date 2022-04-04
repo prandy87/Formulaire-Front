@@ -65,9 +65,9 @@ function App() {
       <Header token={token} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Signup setUser={setUser} />} />
-        <Route path="/signin" element={<Signin setUser={setUser} />} />
+        <Route path="/Signin" element={<Signin setUser={setUser} />} />
         <Route
-          path="/mainpage"
+          path="/MainPage"
           element={
             <MainPage
               firstName={firstName}
