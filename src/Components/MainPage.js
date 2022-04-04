@@ -19,6 +19,7 @@ const MainPage = ({
   const [newCity, setNewCity] = useState();
   const [newComment, setNewComment] = useState();
 
+  const navigate = useNavigate();
   const handleSubmit1 = async (e) => {
     try {
       e.preventDefault();
