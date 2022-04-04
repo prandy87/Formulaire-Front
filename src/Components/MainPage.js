@@ -35,6 +35,7 @@ const MainPage = ({
         Cookies.set("address", newAddress);
         alert("Données personelles mises à jour !");
         window.location.reload(false);
+        navigate("/MainPage");
       }
     } catch (error) {
       alert(error.message);
