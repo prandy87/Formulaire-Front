@@ -8,6 +8,7 @@ const Signup = ({ setUser, setUserData }) => {
     watch,
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm();
 
@@ -36,7 +37,7 @@ const Signup = ({ setUser, setUserData }) => {
         alert(`Votre email est déjà enregistré`);
       }
     }
-    navigate("/mainpage");
+    navigate("/MainPage");
   };
 
   return (
@@ -104,14 +105,19 @@ const Signup = ({ setUser, setUserData }) => {
         />
 
         <input
-          {...register("birthday")}
+          {...register("birthday", {
+            pattern: /[0-9]{2}[-/]{1}[0-9]{2}[-/]{1}[0-9]{4}/,
+          })}
           placeholder="Date de naissance format jj/mm/aaaa"
         />
         <input
           {...register("address")}
           placeholder="Adresse ex. 145 rue Manin"
         />
-        <input {...register("zipcode")} placeholder="Code postal ex. 75019" />
+        <input
+          {...register("zipcode", { pattern: /[0-9]{5}/ })}
+          placeholder="Code postal ex. 75019"
+        />
         <input {...register("city")} placeholder="Ville" />
         <textarea
           {...register("comment")}

@@ -48,6 +48,13 @@ function App() {
       Cookies.set("_id", _id);
     } else {
       Cookies.remove("userToken");
+      Cookies.remove("firstName", firstName);
+      Cookies.remove("lastName", lastName);
+      Cookies.remove("address", address);
+      Cookies.remove("zipcode", zipcode);
+      Cookies.remove("city", city);
+      Cookies.remove("comment", comment);
+      Cookies.remove("_id", _id);
     }
 
     setToken(token);
