@@ -1,4 +1,4 @@
-_SPOILER_ Estetically, this is a work in progress. It wasn't meant to be beautiful -yet- and therefore, it isn't. The point of this client-side app was to be functionnal in its interraction with the homemade server, and was coded with a deadline.
+_SPOILER_ Esthetically, this is a work in progress. It wasn't meant to be beautiful -yet- and therefore, it isn't. The point of this client-side app was to be functionnal in its interraction with the homemade server, and was coded with a deadline.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
