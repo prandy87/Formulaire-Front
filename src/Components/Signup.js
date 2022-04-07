@@ -31,13 +31,13 @@ const Signup = ({ setUser, setUserData }) => {
         response.data.account.city,
         response.data.account.comment
       );
+      navigate("/MainPage");
     } catch (error) {
       console.log(error.message);
       if (error.message.includes("400")) {
         alert(`Votre email est déjà enregistré`);
       }
     }
-    navigate("/MainPage");
   };
 
   return (
